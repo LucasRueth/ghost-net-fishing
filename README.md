@@ -39,7 +39,6 @@ Der Quellcode der Anwendung ist nach dem üblichen Maven-Standard aufgebaut:
 * `src/main/java` – Java-Quellcode (Controller, Services, Repositories, Domänenmodelle)
 * `src/main/resources` – Konfigurationsdateien (u. a. persistence.xml)
 * `src/main/webapp` – JSF-Seiten (XHTML) und Webressourcen
-* `docs` – Schriftliche Ausarbeitung der Fallstudie (PDF)
 
 ## Ausführung der Anwendung
 
