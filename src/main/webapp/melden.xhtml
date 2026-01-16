@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <title>Geisternetz melden</title>
+</h:head>
+
+<h:body>
+    <h1>Geisternetz melden</h1>
+
+    <h:form>
+        <h:panelGrid columns="2" columnClasses="label,value">
+
+            <h:outputLabel value="Breitengrad:" for="bg"/>
+            <h:inputText id="bg" value="#{geisternetzController.neuesNetz.breitengrad}" />
+
+            <h:outputLabel value="Längengrad:" for="lg"/>
+            <h:inputText id="lg" value="#{geisternetzController.neuesNetz.laengengrad}" />
+
+            <h:outputLabel value="Geschätzte Größe:" for="gr"/>
+            <h:inputText id="gr" value="#{geisternetzController.neuesNetz.groesse}" />
+
+            <h:outputLabel value="Anonym melden:" for="anonym"/>
+            <h:selectBooleanCheckbox id="anonym" value="#{geisternetzController.anonym}" />
+
+            <h:outputLabel value="Name (optional):" for="name"/>
+            <h:inputText id="name" value="#{geisternetzController.neuesNetz.meldendePersonName}" />
+
+            <h:outputLabel value="Telefon (optional):" for="tel"/>
+            <h:inputText id="tel" value="#{geisternetzController.neuesNetz.meldendePersonTelefonnummer}" />
+
+        </h:panelGrid>
+
+        <p>
+            <h:commandButton value="Meldung speichern" action="#{geisternetzController.meldeNetz()}" />
+            <h:commandButton value="Zur Startseite" action="#{geisternetzController.zurStartseite()}" immediate="true"/>
+        </p>
+
+        <h:messages style="color:red;" />
+    </h:form>
+
+</h:body>
+</html>
