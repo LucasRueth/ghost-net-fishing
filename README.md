@@ -1,29 +1,54 @@
-# Artikelverwaltung_2_3
+# Ghost Net Fishing – Fallstudie IPWA02-01
 
-Ein Maven Projekt, dass ein WebApp baut, was eine primitive Web-Shop darstellt.
+## Projektbeschreibung
 
-## How to
+Dieses Repository enthält die prototypische Umsetzung der Fallstudie **„Ghost Net Fishing“** im Rahmen des Kurses
+**„Programmierung von industriellen Informationssystemen mit Java (IPWA02-01)“** an der IU Internationalen Hochschule.
 
-Dieses Projekt kann in jedem Entwicklungsumgebung geöffnet werden, das Maven untrestützt.
-Bisher ist IntelliJ IDEA (Community or Ultimate), Eclipse und Netbeans.
+Als technische Ausgangsbasis wurde ein im Kurs bereitgestelltes Java-EE-Beispielprojekt verwendet. Dieses Projekt diente als **Vorlage und Grundgerüst** und wurde im Rahmen der Fallstudie fachlich, strukturell und funktional erweitert sowie an die Anforderungen des Szenarios „Ghost Net Fishing“ angepasst.
 
-Per default ist das Projekt mit einer Datenbankverbindung in Form eines Derby/JavaDB Servers
-(siehe [`persistence.xml`](src/main/resources/META-INF/persistence.xml)), 
-was vorher gestartet werden muss,
+Ziel der Anwendung ist die webbasierte Erfassung und Verwaltung von sogenannten Geisternetzen. Die Anwendung unterstützt sowohl das Melden von Geisternetzen als auch die Koordination von Bergungsmaßnahmen und bildet den jeweiligen Bearbeitungsstatus transparent ab.
 
-Danach kann das produzierte Webapp aus dem IDE gestartet werden 
-(nur ein Servlet-Container ist nötig) oder direkt aus Maven indem das Goal
-`tomcat:run-war` verfolgt wird. 
+## Funktionaler Umfang
 
-## Credit
+Im Rahmen der Fallstudie wurden folgende Kernfunktionen prototypisch umgesetzt:
 
-The project is an enrichment of Artikelverwaltung_2_3 of the IUBH's IPWA02 Module, and is
-helped by 
- [simple-jpa-app](https://github.com/IUBH-Webanwendungen/simple-jpa-app)
- and [jsf-webapp](https://github.com/IUBH-Webanwendungen/jsf-webapp), itself
- an enrichment of  [How to configure JSF in Tomcat](https://www.byteslounge.com/tutorials/how-to-configure-jsf-in-tomcat-example) by Gonçalo Marques by Paul Libbrecht and uses two version of [a](https://openclipart.org/detail/323008/are-you-lucky-typography) picture by j4p4n of OpenCliparts.
-Thanks to suggestions by [Tim Irrgang](https://github.com/designexe/) and the other participants to the tutorial hours.
- 
-It is available under [Apache Public License](LICENSE.txt): Feel free to copy, change, and redistribute it!
- 
-Maintained by Paul Libbrecht.
+* Erfassen von Geisternetzen mit Standort (GPS-Koordinaten) und geschätzter Größe
+* Anonyme oder namentliche Meldung eines Geisternetzes
+* Übersicht über alle offenen (nicht geborgenen) Geisternetze
+* Übernahme der Bergung eines Geisternetzes durch eine bergende Person
+* Statusänderung eines Geisternetzes (geborgen oder verschollen)
+* Persistente Speicherung aller Daten in einer relationalen Datenbank
+
+## Technologiestack
+
+Die Anwendung wurde mit dem im Kurs vorgegebenen Technologiestack umgesetzt:
+
+* Java EE / Jakarta EE
+* JavaServer Faces (JSF) mit Facelets
+* Contexts and Dependency Injection (CDI)
+* Java Persistence API (JPA) mit Hibernate als Persistenz-Provider
+* MySQL als relationale Datenbank
+* WildFly als Application Server
+* Maven für Build- und Abhängigkeitsmanagement
+
+## Projektstruktur
+
+Der Quellcode der Anwendung ist nach dem üblichen Maven-Standard aufgebaut:
+
+* `src/main/java` – Java-Quellcode (Controller, Services, Repositories, Domänenmodelle)
+* `src/main/resources` – Konfigurationsdateien (u. a. persistence.xml)
+* `src/main/webapp` – JSF-Seiten (XHTML) und Webressourcen
+* `docs` – Schriftliche Ausarbeitung der Fallstudie (PDF)
+
+## Ausführung der Anwendung
+
+Die Anwendung wurde lokal mit einem WildFly Application Server betrieben.
+Für den Betrieb wird eine MySQL-Datenbank benötigt, in der die notwendigen Tabellen automatisch durch JPA/Hibernate erzeugt werden.
+
+## Autor
+
+**Verfasser der Fallstudie:** Rüth, Lucas
+**Studiengang:** B. Sc. Wirtschaftsinformatik
+**Matrikelnummer:** IU1413095
+**Kurs:** IPWA02-01
