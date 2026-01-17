@@ -49,5 +49,5 @@ Für den Betrieb wird eine MySQL-Datenbank benötigt, in der die notwendigen Tab
 
 **Verfasser der Fallstudie:** Rüth, Lucas
 **Studiengang:** B. Sc. Wirtschaftsinformatik
-**Matrikelnummer:** IU1413095
+**Matrikelnummer:** IU14130958
 **Kurs:** IPWA02-01
